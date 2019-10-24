@@ -47,10 +47,6 @@ public class ForceVolume3D : MonoBehaviour
     /// </summary>
     private Vector3 forceVector = Vector3.up;
     /// <summary>
-    /// Should this volume overwrite the other object's gravity, or simply add to it's velocity?
-    /// </summary>
-    public bool overwritesGravity = false;
-    /// <summary>
     /// The timer controling toggling (used if isTimed = true)
     /// </summary>
     private float timer = 0f;
@@ -130,43 +126,7 @@ public class ForceVolume3D : MonoBehaviour
         }
     }
 
-    #region Trigger Events
 
-    /// <summary>
-    /// Called when things enter the volume. Sets gravity if volume overwrites gravity.
-    /// </summary>
-    /// <param name="collision"></param>
-    private void OnTriggerEnter( Collider collision )
-    {
-        if( turnedOn )
-        {
-            if( overwritesGravity )
-            {
-                //only apply this to the player pawns
-                if( collision.tag == "Player" )
-                {
-                    collision.GetComponent<Player.PlayerController>().SetGravity(forceVector, forceMult);
-                }
-            }
-        }
-    }
-    /// <summary>
-    /// Called when things exit the volume.  Resets gravity to game normal.
-    /// </summary>
-    /// <param name="collision"></param>
-    private void OnTriggerExit( Collider collision )
-    {
-        if( turnedOn )
-        {
-            if( overwritesGravity )
-            {
-                if( collision.tag == "Player" )
-                {
-                    collision.GetComponent<Player.PlayerController>().SetGravity();
-                }
-            }
-        }
-    }
     /// <summary>
     /// Called every frame something is in this volume.  Applies force to a player.
     /// </summary>
@@ -175,17 +135,14 @@ public class ForceVolume3D : MonoBehaviour
     {
         if( turnedOn )
         {
-            if( !overwritesGravity )
+            if( collision.tag == "Player" )
             {
-                if( collision.tag == "Player" )
-                {
-                    collision.GetComponent<Player.PlayerController>().ApplyForce(forceMult, forceVector);
-                }
+                Vector3 forceThisFrame = forceMult * forceVector * Time.deltaTime;
+                collision.GetComponent<PlayerController2>().ApplyForce2D(forceThisFrame);
             }
         }
     }
 
-    #endregion
 
 }
 
