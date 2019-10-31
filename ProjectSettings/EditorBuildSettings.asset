@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Webb/Scenes/SceneWebb.unity
     guid: d38d6d840c140fc46a37abb548523873
   - enabled: 1
-    path: Assets/White/Scenes/SceneWhite.unity
+    path: Assets/White/Scenes/WhiteScene.unity
     guid: fd5880f4bb02d354e80a366459f7551d
   - enabled: 1
     path: Assets/Wiles/Scenes/SceneWiles.unity
