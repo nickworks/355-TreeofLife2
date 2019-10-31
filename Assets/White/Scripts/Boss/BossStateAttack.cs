@@ -9,7 +9,12 @@ namespace White
     {
         public override BossState Update(BossController boss)
         {
-            Debug.Log("Attack");
+            Debug.Log("attack");
+            /////////////////////// TRANSITIONS:
+            // if the player starts to get too far away from the enemy
+            // move the enemy toward the player
+
+            if (!boss.CanSeeAttackTarget()) return new BossStateIdle(); // if the player gets too far away from the enemy return the enemy to idle
             return null;
         }
     }
