@@ -12,6 +12,9 @@ namespace Wiles
         public float pursueDistanceThreshold = 7;
         public float speed = 10;
 
+        public Projectile prefabProjectile;
+        public ProjectileHoming prefabProjectileHoming;
+
         [HideInInspector]
         public Vector3 velocity = new Vector3();
 
@@ -76,5 +79,20 @@ namespace Wiles
             }
             return false;
         }
+
+
+        public void ShootProjectile()
+        {
+            Projectile newProjectile = Instantiate(prefabProjectile, transform.position, Quaternion.identity);
+            Vector3 dir = (VectorToAttackTarget()).normalized;
+            newProjectile.Shoot(gameObject, dir);
+        }
+
+        public void ShootHomingProjectile()
+        {
+            ProjectileHoming newProjectile = Instantiate(prefabProjectileHoming, transform.position, Quaternion.identity);
+            newProjectile.Shoot(gameObject, attackTarget, Vector3.up);
+        }
+
     }
 }

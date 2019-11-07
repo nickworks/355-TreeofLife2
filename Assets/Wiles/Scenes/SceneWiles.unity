@@ -3634,7 +3634,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16746
+  m_Name: pb_Mesh42416
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3968,5 +3968,22 @@ PrefabInstance:
       propertyPath: visionDistanceThreshold
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 6512000765054536358, guid: 72b7f28b93d0bf04b8e333576a8dcf76,
+        type: 3}
+      propertyPath: prefabProjectile
+      value: 
+      objectReference: {fileID: 3258066634244057477, guid: f68d24be274a01b489b3315630d160bc,
+        type: 3}
+    - target: {fileID: 6512000765054536358, guid: 72b7f28b93d0bf04b8e333576a8dcf76,
+        type: 3}
+      propertyPath: pursueDistanceThreshold
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512000765054536358, guid: 72b7f28b93d0bf04b8e333576a8dcf76,
+        type: 3}
+      propertyPath: prefabProjectileHoming
+      value: 
+      objectReference: {fileID: 4437974597485663071, guid: 8ee60c49ad490a041bd8411f939d0aa0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72b7f28b93d0bf04b8e333576a8dcf76, type: 3}

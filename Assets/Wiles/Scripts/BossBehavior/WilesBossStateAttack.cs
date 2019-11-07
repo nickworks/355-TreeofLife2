@@ -7,11 +7,24 @@ namespace Wiles
 {
     public class WilesBossStateAttack : WilesBossState
     {
+
+        float timeBetweenShots = 0.5f;
+        float timeUntilNextShot = 0;
+
         public override WilesBossState Update(WilesBossController boss)
         {
             ////////////////////////////////////// STATE BEHAVIOR:
 
             // Do attack-ey stuff
+
+            timeUntilNextShot -= Time.deltaTime;
+
+            if (timeUntilNextShot <0)
+            {
+                //boss.ShootProjectile();
+                boss.ShootHomingProjectile();
+                timeUntilNextShot = timeBetweenShots;
+            }
 
             ///////////////////////////////////////////////////////////////////////////////////////////// TRANSITIONS:
 
