@@ -9,11 +9,14 @@ namespace Wiles
     {
         public override WilesBossState Update(WilesBossController boss)
         {
-            // do stuff to the boss...
+            // BOSS BEHAVIOR
+            // Wait for there to be any PlayerProjectile Objects in the scene.
+            // If projectiles are found, determine if they are a threat. (A raycast from the projectiles hitting the boss's head)
+            // After a number of seconds (12sec @ 100% Health, 1sec @ 1/12th Health), go into the ChooseAtkState.
 
             Debug.Log(this);
 
-            // transitions to other states:
+            // TRANSISTIONS:
 
 
             if (boss.CanSeeAttackTarget())
