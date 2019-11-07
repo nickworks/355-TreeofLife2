@@ -6,9 +6,9 @@ namespace White
 {
     public abstract class BossState
     {
-        public abstract BossState Update(BossController boss);
+        public abstract BossState Update(WhiteBossController boss);
 
-        public virtual void OnStart(BossController boss) { }
-        public virtual void OnEnd(BossController boss) { }
+        public virtual void OnStart(WhiteBossController boss) { }
+        public virtual void OnEnd(WhiteBossController boss) { }
     }
 }

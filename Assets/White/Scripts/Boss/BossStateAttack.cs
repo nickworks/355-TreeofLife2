@@ -7,7 +7,7 @@ namespace White
 {
     public class BossStateAttack : BossState
     {
-        public override BossState Update(BossController boss)
+        public override BossState Update(WhiteBossController boss)
         {
             Debug.Log("attack");
             /////////////////////// TRANSITIONS:

@@ -7,7 +7,7 @@ namespace White
 {
     public class BossStatePersue : BossState
     {
-        public override BossState Update(BossController boss)
+        public override BossState Update(WhiteBossController boss)
         {
             // move towards player:
             Vector3 vectorToPlayer = boss.VectorToAttackTarget();

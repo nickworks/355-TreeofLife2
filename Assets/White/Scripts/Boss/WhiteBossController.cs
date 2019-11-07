@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace White
 {
-    public class BossController : MonoBehaviour
+    public class WhiteBossController : MonoBehaviour
     {
         public float visionDistanceThreshold = 10;
         public float pursueDistanceThreshold = 7;
