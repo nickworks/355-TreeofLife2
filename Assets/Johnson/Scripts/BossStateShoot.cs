@@ -8,8 +8,8 @@ namespace Johnson
     {
         public override BossState Update(BossStateMachine boss)
         {
-            Debug.Log("Attack");
-            return null;
+            Debug.Log("Pew Pew");
+            return new BossStateIdle();
         }
     }
 }
