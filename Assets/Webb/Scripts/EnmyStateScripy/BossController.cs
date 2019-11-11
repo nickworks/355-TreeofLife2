@@ -6,9 +6,9 @@ namespace Webb
     public class BossController : MonoBehaviour
     {
         public float speed = 10;
-        public float VisionDistanceThreshold = 10;
-        public float pursueDistanceThreshold = 7;
-
+        public float VisionDistanceThreshold = 40;
+        public float pursueDistanceThreshold = 40;
+        public Projectile. Prefab
         [HideInInspector]
         public Vector3 velocity = new Vector3();
         BossState currentState;
@@ -76,6 +76,11 @@ public float distanceToAttackTarget()
                 }
             }
             return false;
+        }
+    
+    public void ShootProjectile()
+        {
+            Projectile 
         }
     }
 }

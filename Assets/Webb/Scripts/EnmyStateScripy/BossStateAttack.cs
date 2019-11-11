@@ -6,6 +6,8 @@ namespace Webb
 {
     public class BossStateAttack : BossState
     {
+        public static bool spawn;
+        int timer;
         public override BossState Update(BossController boss)
         {
             Vector3 vectorToPlayer = boss.VectorToAttackTarget();
@@ -14,8 +16,17 @@ namespace Webb
             {                                                    // transtion to attack 
                 return new BossStatePrsue();
             }
+          
             Debug.Log("attack");
+            spawn = true;
+            timer += 1;
+            if (spawn == true & timer >= 2)
+            {
+             
+                return new BossStateIdel();
+            }
             return null;
+
         }
     }
 }
