@@ -86,6 +86,7 @@ namespace Wiles
             Projectile newProjectile = Instantiate(prefabProjectile, transform.position, Quaternion.identity);
             Vector3 dir = (VectorToAttackTarget()).normalized;
             newProjectile.Shoot(gameObject, dir);
+            
         }
 
         public void ShootHomingProjectile()
