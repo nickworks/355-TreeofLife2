@@ -53,7 +53,8 @@ namespace Johnson
         public override void OnStart(BossStateMachine boss)
         {
             
-            pickAnAttack = Random.Range(1, 5);
+            ///pickAnAttack = Random.Range(1, 5);
+            pickAnAttack = 1;
 
         }
         public override void OnEnd(BossStateMachine boss)

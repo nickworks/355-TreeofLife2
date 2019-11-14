@@ -10,6 +10,9 @@ namespace Johnson
         public float pursueDistanceThreshold = 7;
         public float speed = 10f;
 
+        public Projectile prefabProjectile;
+        public ProjectileHomimg prefabProjectileHoming;
+
         [HideInInspector]
         public Vector3 velocity = new Vector3();
 
@@ -70,6 +73,22 @@ namespace Johnson
                 }
             }
             return false;
+        }
+
+        public void ShootProjectile()
+        {
+            Projectile newProjectile =Instantiate(prefabProjectile, transform.position, Quaternion.identity);
+
+            Vector3 dir = VectorToAttackTarget().normalized;
+
+            newProjectile.Shoot(gameObject, dir);
+        }
+
+        public void ShootHomingProjectile()
+        {
+            ProjectileHomimg newProjectile = Instantiate(prefabProjectileHoming, transform.position, Quaternion.identity);
+
+            newProjectile.Shoot(gameObject, attackTarget, Vector3.up);
         }
     }
 }
