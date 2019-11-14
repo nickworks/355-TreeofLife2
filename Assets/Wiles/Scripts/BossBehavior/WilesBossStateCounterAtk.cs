@@ -5,6 +5,9 @@ using UnityEngine;
 namespace Wiles { 
 public class WilesBossStateCounterAtk : WilesBossState
     {
+
+        float timer = 0;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -20,7 +23,11 @@ public class WilesBossStateCounterAtk : WilesBossState
 
             Debug.Log(this);
 
+            timer += Time.deltaTime;
+
             // TRANSISTIONS:
+
+            if (timer >= 5) return new WilesBossStateReturn();
 
             return null; // stay in current state
         }

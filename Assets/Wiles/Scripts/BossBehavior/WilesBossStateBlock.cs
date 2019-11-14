@@ -5,6 +5,9 @@ using UnityEngine;
 namespace Wiles { 
 public class WilesBossStateBlock : WilesBossState
     {
+
+        float timer = 0;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -22,6 +25,17 @@ public class WilesBossStateBlock : WilesBossState
             // If no projectiles are found, wait a second, then animate back into idle before actualling transistioning into full idle state.
 
             Debug.Log(this);
+
+            if (Input.GetMouseButton(0))
+            {
+                timer += Time.deltaTime;
+                if (timer >= 10) return new WilesBossStateCounterAtk();
+            }
+
+            if (!Input.GetMouseButton(0))
+            {
+               return new WilesBossStateIdle();
+            }
 
             // TRANSISTIONS:
 

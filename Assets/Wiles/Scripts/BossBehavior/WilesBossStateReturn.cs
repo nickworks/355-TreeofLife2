@@ -18,9 +18,13 @@ public class WilesBossStateReturn : WilesBossState
             // Return to the center of the Arena.
             // Once in position, transition into Idle.
 
+            boss.transform.position = Vector3.MoveTowards(boss.transform.position, new Vector3(-60, 40, 100), boss.speed);
+
             Debug.Log(this);
 
             // TRANSISTIONS:
+
+            if (boss.transform.position == new Vector3(-60, 40, 100)) return new WilesBossStateIdle();
 
             return null; // stay in current state
         }

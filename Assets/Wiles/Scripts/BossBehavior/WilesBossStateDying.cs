@@ -5,6 +5,9 @@ using UnityEngine;
 namespace Wiles { 
 public class WilesBossStateDying : WilesBossState
     {
+
+        float timer = 0;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -20,7 +23,11 @@ public class WilesBossStateDying : WilesBossState
 
             Debug.Log(this);
 
+            timer += Time.deltaTime;
+
             // TRANSISTIONS:
+
+            if (timer >= 12) return new WilesBossStateReturn(); // This is where we get a game over, but for now we will have it on a closed loop.
 
             return null; // stay in current state
         }

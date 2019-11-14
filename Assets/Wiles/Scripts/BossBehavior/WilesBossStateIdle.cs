@@ -23,6 +23,7 @@ namespace Wiles
 
             // TRANSISTIONS:
 
+            if (Input.GetMouseButton(0)) return new WilesBossStateBlock();
 
             if (timer >= 12)
             {
