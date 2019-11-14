@@ -9,12 +9,13 @@ namespace Webb
         public float VisionDistanceThreshold = 40;
         public float pursueDistanceThreshold = 40;
         public float timer;
+        public int attack;
         Vector3 spawnPos;
         [HideInInspector]
         public Vector3 velocity = new Vector3();
         BossState currentState;
-        public Projectile prefabProjectile;
-     
+        public ChargeEnmey prefabChargeEnmey;
+        public BasicEnemy prefabBasicEnemy;
 
         public Transform attackTarget { get; private set; }
         // Start is called before the first frame update
@@ -30,7 +31,7 @@ namespace Webb
         {
             if (currentState == null) SwitchToState(new BossStateIdel());
             if (currentState != null) SwitchToState(currentState.Update(this));
-
+           
 
         }
 
@@ -80,21 +81,38 @@ public float distanceToAttackTarget()
             }
             return false;
         }
-    public void Follow()
+        public void Charge()
+        {
+            Vector3 dirToPlayer = (attackTarget.position - transform.position).normalized;
+            transform.position += dirToPlayer * speed * 2 * Time.deltaTime;
+          
+        }
+        public void Follow()
         {
             Vector3 vectorToPlayer = VectorToAttackTarget();
             Vector3 dirToPlayer = (attackTarget.position - transform.position).normalized;
             transform.position += dirToPlayer * speed * Time.deltaTime;
         }
-        public void ShootProjectile()
+        public void SpawnChargeEnmey()
         {
             timer += Time.deltaTime;
             if (timer >= .7) { 
             
             spawnPos = gameObject.transform.position;
-            Instantiate(prefabProjectile, spawnPos, Quaternion.identity);
+            Instantiate(prefabChargeEnmey, spawnPos, Quaternion.identity);
             timer = 0;
         }
+        }
+        public void SpawnBasicEnemy()
+        {
+            timer += Time.deltaTime;
+            if (timer >= .5)
+            {
+
+                spawnPos = gameObject.transform.position;
+                Instantiate(prefabBasicEnemy, spawnPos, Quaternion.identity);
+                timer = 0;
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Webb
 {
-    public class Projectile : MonoBehaviour
+    public class ChargeEnmey : MonoBehaviour
     {
         GameObject owner;
         
@@ -23,16 +23,20 @@ namespace Webb
             if (player != null) attackTarget = player.transform;
 
         }
-        public Vector3 VectorToAttackTarget()
-        {
-            return attackTarget.position - transform.position;
-        }
+     
         // Update is called once per frame
         void Update()
         {
-            Vector3 dirToPlayer = (attackTarget.position - transform.position).normalized;
-            transform.position += dirToPlayer * speed * Time.deltaTime;
-
+            Vector3 dirToPlayer = (attackTarget.position - transform.position);
+            transform.position += dirToPlayer.normalized * speed * Time.deltaTime;
+            if (dirToPlayer.x <= 5)
+            {
+                speed = 15;
+            }
+            if (dirToPlayer.x  > 5  )
+            {
+                speed = 5;
+            }
             age += Time.deltaTime;
             if (age >= lifeTime)
             {

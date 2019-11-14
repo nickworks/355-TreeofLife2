@@ -10345,51 +10345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f331f99458f344c838a22a31ef74e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &443240936
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 443240937}
-  - component: {fileID: 443240938}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &443240937
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443240936}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.005, y: -0.031, z: -0.021}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2038215358}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &443240938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443240936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad5aa969c3fab9458ae82768f3d4f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemeyBasic: {fileID: 1757178459131081171, guid: 6afcbd458b034184bab0c63429f04e11,
-    type: 3}
 --- !u!114 &464886505 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114400119598113034, guid: 2b408c1c1f2b7b9449ac2b5c1818847b,
@@ -49444,9 +49399,10 @@ MonoBehaviour:
   speed: 8
   VisionDistanceThreshold: 30
   pursueDistanceThreshold: 5
-  enemeyBasic: {fileID: 1757178459131081171, guid: 6afcbd458b034184bab0c63429f04e11,
-    type: 3}
+  timer: 0
   velocity: {x: 0, y: 0, z: 0}
+  prefabProjectile: {fileID: 6477236555714337628, guid: 6afcbd458b034184bab0c63429f04e11,
+    type: 3}
 --- !u!65 &2038215355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49516,8 +49472,7 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 34.5, y: 8.23, z: -0.2}
   m_LocalScale: {x: 2.9152, y: 2.9152, z: 2.9152}
-  m_Children:
-  - {fileID: 443240937}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 116
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
