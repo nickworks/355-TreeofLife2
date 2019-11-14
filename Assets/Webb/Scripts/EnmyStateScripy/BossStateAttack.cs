@@ -7,23 +7,27 @@ namespace Webb
     public class BossStateAttack : BossState
     {
         public static bool spawn;
-        int timer;
+        float timer;
+        public BossController other;
+
         public override BossState Update(BossController boss)
         {
-            Vector3 vectorToPlayer = boss.VectorToAttackTarget();
-            if (vectorToPlayer.sqrMagnitude > boss.pursueDistanceThreshold * boss.pursueDistanceThreshold)// if dis < htrshold 
+           // Vector3 vectorToPlayer = boss.VectorToAttackTarget();
+           /* if (vectorToPlayer.sqrMagnitude > boss.pursueDistanceThreshold * boss.pursueDistanceThreshold)// if dis < htrshold 
 
             {                                                    // transtion to attack 
                 return new BossStatePrsue();
-            }
+            }*/
           
             Debug.Log("attack");
+            
             spawn = true;
-            timer += 1;
-            if (spawn == true & timer >= 2)
+            timer += Time.deltaTime;
+            if (spawn == true & timer >= 3)
             {
-             
-                return new BossStateIdel();
+                spawn = false;
+                return new BossStateCoolDown();
+
             }
             return null;
 

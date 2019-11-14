@@ -7,8 +7,8 @@ namespace Webb
     {
         // Start is called before the first frame update
         public GameObject enemeyBasic;
-        Vector3 startPos;
-       
+        Vector3 spawnPos;
+        float timer;
         void Start()
         {
 
@@ -16,12 +16,16 @@ namespace Webb
 
         // Update is called once per frame
         void Update()
+          
         {
-            startPos = gameObject.transform.position;
-            if ( BossStateAttack.spawn == true)
+            timer += Time.deltaTime;
+            spawnPos = gameObject.transform.position;
+            if ( BossStateAttack.spawn == true & timer >= .7)
             {
                 print("spawn");
-                Instantiate(enemeyBasic, startPos, Quaternion.identity);
+              
+                Instantiate(enemeyBasic, spawnPos, Quaternion.identity);
+                timer = 0;
             }
         }
     }

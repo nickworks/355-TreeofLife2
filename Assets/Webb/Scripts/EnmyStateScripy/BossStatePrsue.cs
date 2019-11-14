@@ -10,10 +10,10 @@ namespace Webb
         public override BossState Update(BossController boss)
         {//////////// State Behavior
          // move towards player
-            Vector3 vectorToPlayer = boss.VectorToAttackTarget();
-            Vector3 dirToPlayer = (boss.attackTarget.position - boss.transform.position).normalized;
+           Vector3 vectorToPlayer = boss.VectorToAttackTarget();
+           /* Vector3 dirToPlayer = (boss.attackTarget.position - boss.transform.position).normalized;
             boss.transform.position += dirToPlayer * boss.speed * Time.deltaTime;
-
+          */  boss.Follow();
             /////////////////////// transtions:
 
             if (vectorToPlayer.sqrMagnitude < boss.pursueDistanceThreshold * boss.pursueDistanceThreshold)// if dis < htrshold 

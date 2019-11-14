@@ -10,7 +10,7 @@ namespace Webb {
         {
 
 
-            Debug.Log("idle");
+           // Debug.Log("idle");
             //transstions
 
             if (boss.CanSeeAttackTarget())
