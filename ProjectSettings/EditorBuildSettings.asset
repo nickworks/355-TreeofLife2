@@ -6,15 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Johnson/Scenes/Johnson_Sandbox.unity
-    guid: fbdb0c476e8442f41909904bf87972a8
+    path: Assets/Core/Scenes/MainMenu.unity
+    guid: 1627f194db33bea40981d777eeabaac1
   - enabled: 1
     path: Assets/Webb/Scenes/SceneWebb.unity
     guid: d38d6d840c140fc46a37abb548523873
   - enabled: 1
-    path: Assets/White/Scenes/SceneWhite.unity
+    path: Assets/White/Scenes/WhiteScene.unity
     guid: fd5880f4bb02d354e80a366459f7551d
   - enabled: 1
     path: Assets/Wiles/Scenes/SceneWiles.unity
     guid: ff5ad51f6d958a745bef41b684e79433
+  - enabled: 1
+    path: Assets/Johnson/Scenes/SceneJohnson.unity
+    guid: 74ca086174197c14db638629c4e86da6
   m_configObjects: {}
