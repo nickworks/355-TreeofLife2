@@ -19,8 +19,11 @@ namespace White
 
             if(vectorToPlayer.sqrMagnitude < boss.pursueDistanceThreshold * boss.pursueDistanceThreshold) return new BossStateAttack(); // if dis < threshold transition to attack
 
-            if (!boss.CanSeeAttackTarget()) return new BossStateIdle(); // if we can't see the player transition to idle
+            //if (!boss.CanSeeAttackTarget()) return new BossStateIdle(); // if we can't see the player transition to idle
 
+            // switch to attack state
+
+            // switch to dead state
             return null;
         }
     }
