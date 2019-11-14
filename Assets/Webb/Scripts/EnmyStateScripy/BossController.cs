@@ -8,11 +8,13 @@ namespace Webb
         public float speed = 10;
         public float VisionDistanceThreshold = 40;
         public float pursueDistanceThreshold = 40;
-        public GameObject enemeyBasic;
+        public float timer;
         Vector3 spawnPos;
         [HideInInspector]
         public Vector3 velocity = new Vector3();
         BossState currentState;
+        public Projectile prefabProjectile;
+     
 
         public Transform attackTarget { get; private set; }
         // Start is called before the first frame update
@@ -83,11 +85,16 @@ public float distanceToAttackTarget()
             Vector3 vectorToPlayer = VectorToAttackTarget();
             Vector3 dirToPlayer = (attackTarget.position - transform.position).normalized;
             transform.position += dirToPlayer * speed * Time.deltaTime;
-        } 
-    public void ShootProjectile()
+        }
+        public void ShootProjectile()
         {
+            timer += Time.deltaTime;
+            if (timer >= .7) { 
+            
             spawnPos = gameObject.transform.position;
-            Instantiate(enemeyBasic, spawnPos, Quaternion.identity);
+            Instantiate(prefabProjectile, spawnPos, Quaternion.identity);
+            timer = 0;
+        }
         }
     }
 }

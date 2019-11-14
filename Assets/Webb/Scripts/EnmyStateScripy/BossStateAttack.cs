@@ -20,12 +20,11 @@ namespace Webb
             }*/
           
             Debug.Log("attack");
-            
-            spawn = true;
+            boss.ShootProjectile();
+            //spawn = true;
             timer += Time.deltaTime;
-            if (spawn == true & timer >= 3)
-            {
-                spawn = false;
+            if (  timer >= 3)
+            {              //  spawn = false;
                 return new BossStateCoolDown();
 
             }
