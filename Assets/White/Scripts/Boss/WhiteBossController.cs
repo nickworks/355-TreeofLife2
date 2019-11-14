@@ -4,11 +4,14 @@ using UnityEngine;
 
 namespace White
 {
-    public class BossController : MonoBehaviour
+    public class WhiteBossController : MonoBehaviour
     {
         public float visionDistanceThreshold = 10;
         public float pursueDistanceThreshold = 7;
         public float speed = 10;
+
+        public WhiteProjectile prefabProjectile;
+        public WhiteProjectileHoming prefabProjectileHoming;
 
         [HideInInspector]
         public Vector3 velocity = new Vector3();
@@ -66,6 +69,20 @@ namespace White
                 }
             }
             return false;
+        }
+
+        public void ShootProjectile()
+        {
+            WhiteProjectile newProjectile = Instantiate(prefabProjectile, transform.position, Quaternion.identity);
+
+            Vector3 dir = (VectorToAttackTarget() + Random.insideUnitSphere * 5).normalized;
+            newProjectile.Shoot(gameObject, dir);
+        }
+
+        public void ShootHomingProjectile()
+        {
+            WhiteProjectileHoming newProjectile = Instantiate(prefabProjectileHoming, transform.position, Quaternion.identity);
+            newProjectile.Shoot(gameObject, attackTarget, Vector3.up);
         }
     }
 }
