@@ -56,6 +56,7 @@ public class PlayerController2 : MonoBehaviour
     }
 
     void Update() {
+        if (PauseMenu.isPaused) return;
         DoVerticalMovement();
         DoHorizontalMovement();
         MoveCharacter();
