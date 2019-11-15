@@ -18,11 +18,16 @@ namespace Johnson
 
             if(timeUntilNextShot <= 0)
             {
-                boss.ShootHomingProjectile();
+                boss.ShootProjectile();
                 timeUntilNextShot = timeBetweenShots;
             }
-
+           
             //boss.ShootProjectile();
+
+            if (!boss.CanSeeAttackTarget())
+            {
+                return new BossStateIdle();
+            }
 
             return null;
         }

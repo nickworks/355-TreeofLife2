@@ -20,11 +20,12 @@ namespace Johnson
 
             //////////////////////////// TRANSITION:
             ///
-            if(vectorToPlayer.sqrMagnitude < boss.pursueDistanceThreshold * boss.pursueDistanceThreshold) // if dis < threshold
-            {
-                return new BossStatePursue();
-            }
 
+            if (vectorToPlayer.sqrMagnitude < boss.attackDistanceThreshold * boss.attackDistanceThreshold)
+            {
+                return new BossStateAttack();
+            }
+            
             if (!boss.CanSeeAttackTarget()) // if we can't see the player..
             {
                 // transition to idle
