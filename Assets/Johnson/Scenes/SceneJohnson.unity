@@ -520,8 +520,8 @@ GameObject:
   - component: {fileID: 231532432}
   - component: {fileID: 231532431}
   - component: {fileID: 231532430}
-  - component: {fileID: 231532429}
   - component: {fileID: 231532428}
+  - component: {fileID: 231532429}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -541,17 +541,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b4dcfec65341548b2abbb9b9aee330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionDistanceThreshold: 20
-  pursueDistanceThreshold: 10
-  attackDistanceThreshold: 7
+  visionDistanceThreshold: 30
+  pursueDistanceThreshold: 20
+  attackDistanceThreshold: 10
   speed: 6.21
   prefabProjectile: {fileID: 9201374848890994321, guid: 8583f84428003f3408f57c25b4a178ed,
     type: 3}
   prefabProjectileHoming: {fileID: 6980749930323419812, guid: 345d53a25e6a9c54cb714c945c6b98e6,
     type: 3}
   velocity: {x: 0, y: 0, z: 0}
---- !u!65 &231532429
-BoxCollider:
+--- !u!136 &231532429
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -560,8 +560,9 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &231532430
 MeshRenderer:
@@ -608,7 +609,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231532427}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &231532432
 Transform:
   m_ObjectHideFlags: 0
@@ -617,8 +618,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231532427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.64, y: 3.57, z: -40.06}
-  m_LocalScale: {x: 5.8322234, y: 5.8322234, z: 5.8322234}
+  m_LocalPosition: {x: -10.07, y: 1.6, z: -39.3}
+  m_LocalScale: {x: 1.1314249, y: 1.1314249, z: 1.1314249}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -726,7 +727,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14540
+  m_Name: pb_Mesh15090
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1127,6 +1128,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114400119598113034, guid: 2b408c1c1f2b7b9449ac2b5c1818847b,
+        type: 3}
+      propertyPath: left
+      value: 
+      objectReference: {fileID: 1492481013}
     - target: {fileID: 114617691073835292, guid: 2b408c1c1f2b7b9449ac2b5c1818847b,
         type: 3}
       propertyPath: cameraData.yawOffset
@@ -1147,11 +1153,6 @@ PrefabInstance:
       propertyPath: cameraData.fov
       value: 54.6
       objectReference: {fileID: 0}
-    - target: {fileID: 114400119598113034, guid: 2b408c1c1f2b7b9449ac2b5c1818847b,
-        type: 3}
-      propertyPath: left
-      value: 
-      objectReference: {fileID: 1492481013}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b408c1c1f2b7b9449ac2b5c1818847b, type: 3}
 --- !u!1 &2104442408

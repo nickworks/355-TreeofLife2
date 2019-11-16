@@ -35,16 +35,7 @@ namespace Johnson
 
                 Debug.Log("ATTACK02");
             }
-            if (currentAttack == 3 && isAttacking == true)
-            {
-
-                Debug.Log("ATTACK03");
-            }
-            if (currentAttack == 4 && isAttacking == true)
-            {
-
-                Debug.Log("ATTACK04");
-            }
+            
 
             return null;
         }

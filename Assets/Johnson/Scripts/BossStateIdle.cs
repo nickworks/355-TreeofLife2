@@ -21,14 +21,14 @@ namespace Johnson
             // transitions to other states
 
 
-            if (boss.DistanceToAttackTargt() < boss.pursueDistanceThreshold)
-            {
-                return new BossStatePursue();
-            }
+            
             if (boss.DistanceToAttackTargt() < boss.visionDistanceThreshold)
-            {   
-                return new BossStateShoot();                
+            {
+                
+                return new BossStatePursue();
+                                             
             }
+            
 
 
             return null; // stay in current state

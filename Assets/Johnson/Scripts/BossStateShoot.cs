@@ -28,8 +28,15 @@ namespace Johnson
             {
                 return new BossStateIdle();
             }
-
-            return null;
+            else if (boss.DistanceToAttackTargt() < boss.attackDistanceThreshold)
+            {
+                return new BossStateAttack();
+            }
+            else
+            {
+                return null;
+            }
+            
         }
 
         
