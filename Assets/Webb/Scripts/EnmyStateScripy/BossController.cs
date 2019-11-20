@@ -99,7 +99,7 @@ public float distanceToAttackTarget()
             if (timer >= .7) { 
             
             spawnPos = gameObject.transform.position;
-            Instantiate(prefabChargeEnmey, spawnPos, Quaternion.identity);
+                ChargeEnmey newChargeEnemy = Instantiate(prefabChargeEnmey, spawnPos, Quaternion.identity);
             timer = 0;
         }
         }
@@ -110,7 +110,7 @@ public float distanceToAttackTarget()
             {
 
                 spawnPos = gameObject.transform.position;
-                Instantiate(prefabBasicEnemy, spawnPos, Quaternion.identity);
+                BasicEnemy newBasicEnemy = Instantiate(prefabBasicEnemy, spawnPos, Quaternion.identity);
                 timer = 0;
             }
         }

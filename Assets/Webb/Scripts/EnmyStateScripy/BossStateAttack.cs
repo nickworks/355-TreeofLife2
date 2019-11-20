@@ -21,7 +21,7 @@ namespace Webb
                 random = true;
             } 
             Debug.Log(attack);
-            if (attack == 1)
+           /* if (attack == 1)
             {
                 boss.SpawnBasicEnemy();
                 time = 5;
@@ -30,7 +30,7 @@ namespace Webb
             {
                 boss.SpawnChargeEnmey();
                 time = 2;
-            }
+            }*/
             if (attack == 3)
             {
                 boss.Charge();
