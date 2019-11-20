@@ -1,32 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Hit : MonoBehaviour
+namespace Webb
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Hit : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void OnTriggerEnter(Collider collider)
-
-
-    {
-        if ( collider.transform.tag == "Player")
+        // Start is called before the first frame update
+        void Start()
         {
-            // print("hit");
-            print("projectile hit something");
-           Destroy(gameObject);  
-        }
-        
 
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+        void OnTriggerEnter(Collider collider)
+
+
+        {
+            if (collider.transform.tag == "Player")
+            {
+                // print("hit");
+                print("projectile hit something");
+                HUDControler.playerHealth -= 100;
+                
+            }
+
+
+        }
     }
 }
-

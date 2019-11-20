@@ -34,7 +34,7 @@ namespace Webb
            
 
         }
-
+       
         private void SwitchToState(BossState newState)
         {
             if (newState != null)
@@ -46,6 +46,7 @@ namespace Webb
             }
         }
     
+        
         public Vector3 VectorToAttackTarget()
         {
 return  attackTarget.position - transform.position;
@@ -54,6 +55,8 @@ public float distanceToAttackTarget()
         {
             return VectorToAttackTarget().magnitude;
         }
+
+        
         public bool CanSeeAttackTarget()
         {
             if (attackTarget == null) return false;
@@ -86,6 +89,12 @@ public float distanceToAttackTarget()
             Vector3 dirToPlayer = (attackTarget.position - transform.position).normalized;
             transform.position += dirToPlayer * speed * 2 * Time.deltaTime;
           
+        }
+        public void Retreat()
+        {
+
+            transform.position += Vector3.right* 20 * Time.deltaTime;
+
         }
         public void Follow()
         {

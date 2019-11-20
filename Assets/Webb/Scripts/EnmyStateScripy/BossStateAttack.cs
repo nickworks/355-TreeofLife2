@@ -20,8 +20,8 @@ namespace Webb
                 attack = Random.Range(1, 4);
                 random = true;
             } 
-            Debug.Log(attack);
-           /* if (attack == 1)
+          //  Debug.Log(attack);
+            if (attack == 1)
             {
                 boss.SpawnBasicEnemy();
                 time = 5;
@@ -30,11 +30,11 @@ namespace Webb
             {
                 boss.SpawnChargeEnmey();
                 time = 2;
-            }*/
+            }
             if (attack == 3)
             {
                 boss.Charge();
-                time = 1.5f;
+                time = .05f;
             }
             //spawn = true;
             timer += Time.deltaTime;
@@ -43,6 +43,10 @@ namespace Webb
                 random = false;
                 return new BossStateCoolDown();
 
+            }
+            if (EnemyHit.hit == true)
+            {
+                return new BossStateDamged();
             }
             return null;
 

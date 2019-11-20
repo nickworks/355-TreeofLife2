@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-namespace webb
+namespace Webb
 {
     public class HUDControler : MonoBehaviour
     {
         // Start is called before the first frame update
-        public Image progressBar;
-        float xp = 50;
-        float xpMax = 350;
-      
-    
-       
+        public Image playerHealthBar;
+       static public float playerHealth = 550;
+        float PlayerHealthMax = 550;
+        public Image enemyHealthBar;
+        static public float enemyHealth = 1000;
+        float enemyHealthMax = 1000;
+
+
         void Start()
         {
             
@@ -30,13 +32,10 @@ namespace webb
             
 
            
-            progressBar.fillAmount = xp / xpMax;
-            
+            playerHealthBar.fillAmount = playerHealth / PlayerHealthMax;
+            enemyHealthBar.fillAmount = enemyHealth / enemyHealthMax;
         }
 
-        public void ClearXpValue()
-        {
-            xp = 0;
-        }
+  
     }
 }
