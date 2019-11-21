@@ -25,7 +25,7 @@ namespace Wiles
             if (timeUntilNextShot <0)
             {
                 //boss.ShootProjectile();
-                boss.ShootHomingProjectile();
+                boss.ShootProjectile();
                 timeUntilNextShot = timeBetweenShots;
             }
 
