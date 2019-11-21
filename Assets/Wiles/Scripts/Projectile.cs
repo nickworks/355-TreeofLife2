@@ -12,6 +12,8 @@ namespace Wiles
         protected List<GameObject> ownersChildren = new List<GameObject>();
         protected Rigidbody body;
 
+        //public GameObject levelScript;
+
         float speed = 100;
         /// <summary>
         ///  How many seconds this projectile should have
@@ -67,11 +69,24 @@ namespace Wiles
 
             Projectile p = collider.GetComponent<Projectile>(); // Checks if this collided w/ a projectile
 
-            if (p != null) return; // Don't collide w/ the other projectile
+            if (p != null && p.owner == owner) return; // Don't collide w/ projectiles from the same owner.
 
-            //collider.GetComponent<PlayerController2>();
+            if(collider.GetComponent<PlayerController2>() != null) // We've collided w/ the player
+            {// Here I'd like to add another check to make sure the projectile after hitting the player wasn't shot by the player.
+                //^This^ should have already been done earlier, but it doesn't hurt to double check.
+                WilesLevelScript level;
+                if((level = GetComponentInParent<WilesLevelScript>()) != null)
+                {
+                    level.PlayerCollision();
 
-            print("projectile hit " + collider + "'s " + collider.gameObject);
+                    print("projectile hit " + collider.gameObject + "'s " + collider);
+
+                    Destroy(gameObject);
+                }
+            }
+
+
+            print("projectile hit " + collider.gameObject + "'s " +  collider);
 
             collider.gameObject.BroadcastMessage("TakeDamage", 1); // Send a message to this object, if it has this function, run it!
 

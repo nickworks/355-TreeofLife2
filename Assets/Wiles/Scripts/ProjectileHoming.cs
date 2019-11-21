@@ -8,7 +8,7 @@ namespace Wiles
     {
         Transform target;
         private float homingForce = 10000;
-        float maxforce = 1000;
+        float maxforce = 100;
 
         public void Shoot(GameObject owner,Transform target, Vector3 direction)
         {

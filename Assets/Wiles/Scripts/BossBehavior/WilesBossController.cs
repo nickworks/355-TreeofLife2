@@ -26,6 +26,8 @@ namespace Wiles
 
         WilesBossState currentState;
 
+        public GameObject level;
+
         public Transform attackTarget { get; private set; }
 
         // Start is called before the first frame update
@@ -105,7 +107,7 @@ namespace Wiles
 
         public void ShootProjectile()
         {
-            Projectile newProjectile = Instantiate(prefabProjectile, transform.position, Quaternion.identity);
+            Projectile newProjectile = Instantiate(prefabProjectile, transform.position, Quaternion.identity, level.transform);
             Vector3 dir = (VectorToAttackTarget()).normalized;
             newProjectile.Shoot(gameObject, dir);
             
