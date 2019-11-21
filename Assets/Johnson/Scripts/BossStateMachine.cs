@@ -8,6 +8,7 @@ namespace Johnson
     {
         public float visionDistanceThreshold = 10f;
         public float pursueDistanceThreshold = 7;
+        public float attackDistanceThreshold = 5;
         public float speed = 10f;
 
         public Projectile prefabProjectile;
