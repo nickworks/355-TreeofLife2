@@ -15,6 +15,12 @@ namespace Wiles
         public Projectile prefabProjectile;
         public ProjectileHoming prefabProjectileHoming;
 
+        public float health = 100;
+        public float maxHealth = 100;
+        public int extraHealth = 2;
+
+        public bool gameOver = false;
+
         [HideInInspector]
         public Vector3 velocity = new Vector3();
 
@@ -29,13 +35,29 @@ namespace Wiles
             if(player !=null) attackTarget = player.transform;
         }
 
+        public void takeDamage(float dmg)
+        {
+            if (gameOver) return;
+            health -= dmg;
+            if (health <= 0)
+            {
+                if (extraHealth > 0)
+                {
+                    extraHealth--;
+                    health = maxHealth;
+                }
+                else { gameOver = true; }
+            }
+        }
+
         // Update is called once per frame
         void Update()
         {
-
+            if (gameOver) SwitchToState(new WilesBossStateDying());
             if (currentState == null) SwitchToState( new WilesBossStateIdle());
             if (currentState != null) SwitchToState(currentState.Update(this));
-
+            //test();
+            if (gameOver) SwitchToState(new WilesBossStateDying());
         }
 
         private void SwitchToState(WilesBossState newState)
@@ -94,6 +116,9 @@ namespace Wiles
             ProjectileHoming newProjectile = Instantiate(prefabProjectileHoming, transform.position, Quaternion.identity);
             newProjectile.Shoot(gameObject, attackTarget, Vector3.up);
         }
-
+        void test()
+        {
+            takeDamage(1);
+        }
     }
 }

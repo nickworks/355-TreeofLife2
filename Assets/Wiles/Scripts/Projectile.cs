@@ -73,7 +73,7 @@ namespace Wiles
 
             print("projectile hit " + collider + "'s " + collider.gameObject);
 
-            collider.gameObject.BroadcastMessage("TakeDamage", 15); // Send a message to this object, if it has this function, run it!
+            collider.gameObject.BroadcastMessage("TakeDamage", 1); // Send a message to this object, if it has this function, run it!
 
             Destroy(gameObject);
         }
