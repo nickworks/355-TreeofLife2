@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Webb
 {
+    /// <summary>
+    /// this bosss
+    /// </summary>
     public class BossController : MonoBehaviour
     {
         public float speed = 10;

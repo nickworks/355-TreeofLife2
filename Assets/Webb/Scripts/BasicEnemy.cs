@@ -6,8 +6,8 @@ namespace Webb
     public class BasicEnemy : MonoBehaviour
     {
         GameObject owner;
-
-
+        Vector3 dirToPlayer;
+        Vector3 offSet;
         float lifeTime = 15;
         int speed = 5;
         float age;
@@ -19,6 +19,7 @@ namespace Webb
         // Start is called before the first frame update
         void Start()
         {
+            offSet = new Vector3(0.0f, Random.Range(-2.0f, 3), 0.0f);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null) attackTarget = player.transform;
 
@@ -27,7 +28,14 @@ namespace Webb
         // Update is called once per frame
         void Update()
         {
-            Vector3 dirToPlayer = (attackTarget.position - transform.position);
+            if (age <= 5)
+            {
+                dirToPlayer = (attackTarget.position - transform.position + offSet);
+            }
+            else
+            {
+               Vector3 dirToPlayer = (attackTarget.position - transform.position  );
+            }
             transform.position += dirToPlayer.normalized * speed * Time.deltaTime;
 
             age += Time.deltaTime;

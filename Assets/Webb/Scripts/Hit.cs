@@ -24,7 +24,7 @@ namespace Webb
             {
                 // print("hit");
                 print("projectile hit something");
-                HUDControler.playerHealth -= 50;
+                HUDControler.playerHealth -= 100;
                 
             }
 

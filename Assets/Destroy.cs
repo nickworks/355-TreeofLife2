@@ -19,7 +19,7 @@ public class Destroy : MonoBehaviour
     {
         if (collider.transform.tag == "Player")
             {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
             print("bambambambambambambambambambambambam");
         }
     }
