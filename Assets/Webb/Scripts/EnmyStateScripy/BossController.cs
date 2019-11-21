@@ -115,7 +115,7 @@ public float distanceToAttackTarget()
         public void SpawnBasicEnemy()
         {
             timer += Time.deltaTime;
-            if (timer >= .5)
+            if (timer >= 1.2)
             {
 
                 spawnPos = gameObject.transform.position;

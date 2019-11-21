@@ -51173,7 +51173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   VisionDistanceThreshold: 30
-  pursueDistanceThreshold: 5
+  pursueDistanceThreshold: 15
   timer: 0
   attack: 0
   velocity: {x: 0, y: 0, z: 0}

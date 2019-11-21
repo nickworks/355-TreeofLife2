@@ -9,7 +9,7 @@ namespace Webb
         
     
         float lifeTime = 15;
-        int speed = 5;
+        int speed = 2;
         float age;
         public void Shoot(GameObject owner)
         {
@@ -35,7 +35,7 @@ namespace Webb
             }
             if (dirToPlayer.x  > 5  )
             {
-                speed = 5;
+                speed = 2;
             }
             age += Time.deltaTime;
             if (age >= lifeTime)
@@ -48,9 +48,10 @@ namespace Webb
 
         {
             if (collider.gameObject == owner) return;
-            print("projectile hit something");
-            Destroy(gameObject);
-            
+            if (collider.transform.tag == "Player") {
+                    print("projectile hit something");
+                    Destroy(gameObject);
+                }
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Webb
         {
           if (random == false)
             {
-                attack = Random.Range(1, 4);
+                attack = Random.Range(2,3 );
                 random = true;
             } 
           //  Debug.Log(attack);
@@ -34,7 +34,7 @@ namespace Webb
             if (attack == 3)
             {
                 boss.Charge();
-                time = .05f;
+                time = 1f;
             }
             //spawn = true;
             timer += Time.deltaTime;

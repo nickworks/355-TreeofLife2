@@ -41,9 +41,11 @@ namespace Webb
 
         {
             if (collider.gameObject == owner) return;
-            print("projectile hit something");
-            Destroy(gameObject);
-
+            if (collider.transform.tag == "Player")
+            {
+                print("projectile hit something");
+                Destroy(gameObject);
+            }
         }
     }
 }
