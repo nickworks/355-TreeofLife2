@@ -51,6 +51,7 @@ namespace Webb
             if (collider.transform.tag == "Player") {
                     print("projectile hit something");
                     Destroy(gameObject);
+                HUDControler.playerHealth -= 15;
                 }
         }
     }

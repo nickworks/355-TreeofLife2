@@ -17,7 +17,7 @@ namespace Webb
         {
           if (random == false)
             {
-                attack = Random.Range(2,3 );
+                attack = Random.Range(1,4 );
                 random = true;
             } 
           //  Debug.Log(attack);
