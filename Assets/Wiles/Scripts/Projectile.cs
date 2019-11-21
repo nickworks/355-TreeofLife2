@@ -12,7 +12,7 @@ namespace Wiles
         protected List<GameObject> ownersChildren = new List<GameObject>();
         protected Rigidbody body;
 
-        float speed = 10;
+        float speed = 100;
         /// <summary>
         ///  How many seconds this projectile should have
         /// </summary>
