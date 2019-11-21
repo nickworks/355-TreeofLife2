@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Webb
 {
-    public class Projectile : MonoBehaviour
+    public class BasicEnemy : MonoBehaviour
     {
         GameObject owner;
-        
-    
+        Vector3 dirToPlayer;
+        Vector3 offSet;
         float lifeTime = 15;
         int speed = 5;
         float age;
@@ -19,19 +19,24 @@ namespace Webb
         // Start is called before the first frame update
         void Start()
         {
+            offSet = new Vector3(0.0f, Random.Range(-2.0f, 3), 0.0f);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null) attackTarget = player.transform;
 
         }
-        public Vector3 VectorToAttackTarget()
-        {
-            return attackTarget.position - transform.position;
-        }
+
         // Update is called once per frame
         void Update()
         {
-            Vector3 dirToPlayer = (attackTarget.position - transform.position).normalized;
-            transform.position += dirToPlayer * speed * Time.deltaTime;
+            if (age <= 5)
+            {
+                dirToPlayer = (attackTarget.position - transform.position + offSet);
+            }
+            else
+            {
+               Vector3 dirToPlayer = (attackTarget.position - transform.position  );
+            }
+            transform.position += dirToPlayer.normalized * speed * Time.deltaTime;
 
             age += Time.deltaTime;
             if (age >= lifeTime)
@@ -40,13 +45,16 @@ namespace Webb
             }
         }
         void OnTriggerEnter(Collider collider)
-           
+
 
         {
             if (collider.gameObject == owner) return;
-            print("projectile hit something");
-            Destroy(gameObject);
-            
+            if (collider.transform.tag == "Player")
+            {
+                print("projectile hit something");
+                Destroy(gameObject);
+                HUDControler.playerHealth -= 25;
+            }
         }
     }
 }

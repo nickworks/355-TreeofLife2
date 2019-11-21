@@ -9,11 +9,15 @@ namespace Webb {
         // Start is called before the first frame update
         public override BossState Update(BossController boss)
         {
-            Debug.Log("cooling off");
+            //Debug.Log("cooling off");
             timer += Time.deltaTime;
             if(timer >= 5)
             {
                 return new BossStateIdel();
+            }
+            if (EnemyHit.hit == true)
+            {
+                return new BossStateDamged();
             }
             return null;
         }

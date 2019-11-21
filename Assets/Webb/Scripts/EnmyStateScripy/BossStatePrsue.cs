@@ -15,7 +15,10 @@ namespace Webb
             boss.transform.position += dirToPlayer * boss.speed * Time.deltaTime;
           */  boss.Follow();
             /////////////////////// transtions:
-
+            if (EnemyHit.hit == true)
+            {
+                return new BossStateDamged();
+            }
             if (vectorToPlayer.sqrMagnitude < boss.pursueDistanceThreshold * boss.pursueDistanceThreshold)// if dis < htrshold 
            
             {                                                    // transtion to attack 
